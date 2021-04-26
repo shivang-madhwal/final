@@ -1,0 +1,28 @@
+TABLES USED 
+
+
+movie: movie_ID, title, director, year, genre, rating
+
+	movie_ID: PK, auto increment, INT
+	title: TEXT
+	director: TEXT
+	year: INT
+	genre: TEXT
+	rating: INT
+	
+
+user: liked_movies, name, email, username, password
+
+	liked_movies: TEXT
+	name: TEXT
+	email: TEXT
+	username: PK, VARCHAR(255)
+	password: TEXT
+
+
+
+
+details_log: movie_ID, edit_time
+
+	movie_id: PK, INT
+	edit_time: TIMESTAMP
