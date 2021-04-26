@@ -2,23 +2,32 @@ import React from "react";
 import './App.css';
 import { useState } from 'react';
 import Axios from 'axios';
+import { useHistory, Redirect } from 'react-router-dom';
+
 
 function SignUp() {
 
+    let history = useHistory();
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const addUser = () => {
-        Axios.post('http://localhost:3001/signup', {
-            name: name,
-            username: username,
-            email: email,
-            password: password,
-        }).then(() => {
-            console.log(" User details inserted successfully");
-        });
+        try {
+            Axios.post('http://localhost:3001/signup', {
+                name: name,
+                username: username,
+                email: email,
+                password: password,
+            }).then(() => {
+                <Redirect to="/login" />
+                console.log(" User details inserted successfully");
+            });
+        } catch (error) {
+            console.log(error);
+        }
+
     };
 
 

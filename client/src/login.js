@@ -3,7 +3,7 @@ import './App.css';
 import Axios from "axios";
 import { useState } from 'react';
 
-function Home() {
+function Login() {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -14,7 +14,7 @@ function Home() {
             username: username,
             password: password,
         }).then(() => {
-            console.log("User Logged In");
+            console.log("User Logged in");
         });
     };
 
@@ -33,4 +33,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Login;

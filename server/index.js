@@ -61,13 +61,13 @@ app.post('/searchMovie', (req, res) => {
 );
 
 app.post('/signup', (req, res) => {
-    const name = req.body.name
-    const email = req.body.email
-    const username = req.body.username
-    const password = req.body.password
-    console.log("inside signup function: name: " + req.body.name +" email: "+req.body.email+" username: "+req.body.username+" password: "+req.body.password);
+    const name = req.body.name;
+    const email = req.body.email;
+    const username = req.body.username;
+    const password = req.body.password;
+    console.log("inside signup function: name: " + req.body.name + " email: " + req.body.email + " username: " + req.body.username + " password: " + req.body.password);
 
-    db.query('INSERT INTO user (name, email, username, password) VALUES(?,?,?,?)',
+    db.query('INSERT INTO user (name, email, username, password) VALUES (?,?,?,?)',
         [name, email, username, password],
         (err, result) => {
             if (err) {
@@ -90,10 +90,10 @@ app.post('/login', (req, res) => {
             if (err) {
                 console.log(err);
             } else {
-                if (result.length > 0){
+                if (result.length > 0) {
                     res.send(result);
                 } else {
-                    res.send({message: "no such user found"});
+                    res.send({ message: "no such user found" });
                 }
             }
         }
