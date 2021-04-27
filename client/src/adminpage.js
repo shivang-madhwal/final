@@ -8,7 +8,7 @@ function AdminPage() {
     const [title, setTitle] = useState("");
     const [director, setDirector] = useState("");
     const [year, setYear] = useState(0);
-    const [gerne, setGerne] = useState("");
+    const [genre, setGenre] = useState("");
     const [rating, setRating] = useState(0);
 
     //for search box
@@ -18,7 +18,7 @@ function AdminPage() {
     const [movieList, setMovieList] = useState([]);
     //console.log(movieList);
     const displayInfo = () => {
-        console.log(title + " " + director + " " + year + " " + gerne + " " + rating);
+        console.log(title + " " + director + " " + year + " " + genre + " " + rating);
     }
 
     const addMovie = () => {
@@ -27,7 +27,7 @@ function AdminPage() {
             title: title,
             director: director,
             year: year,
-            gerne: gerne,
+            genre: genre,
             rating: rating,
         }).then(() => {
             console.log("Values inserted successfully");
@@ -73,9 +73,9 @@ function AdminPage() {
                 <input className="form-control" type="text" onChange={(event) => {
                     setDirector(event.target.value);
                 }}></input>
-                <label>Gerne</label>
+                <label>genre</label>
                 <input className="form-control" type="text" onChange={(event) => {
-                    setGerne(event.target.value);
+                    setGenre(event.target.value);
                 }}></input>
                 <label>Year</label>
                 <input className="form-control" type="number" onChange={(event) => {
@@ -95,7 +95,7 @@ function AdminPage() {
                     return (
                         <div key={key} className="movie">
                             <div className="details">Title: {val.Title}</div>
-                            <div className="details"> Gerne: {val.Gerne}</div>
+                            <div className="details"> genre: {val.genre}</div>
                             <div className="details"> Director: {val.Director}</div>
                             <div className="details"> Year: {val.Year}</div>
                             <div className="details"> Rating: {val.Rating}</div>

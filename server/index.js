@@ -10,7 +10,7 @@ app.use(express.json());
 const db = mysql.createConnection({
     user: 'root',
     host: 'localhost',
-    password: '',
+    password: 'sasank2001',
     database: 'movie_database'
 });
 
@@ -18,12 +18,12 @@ app.post('/addmovies', (req, res) => {
     const title = req.body.title
     const director = req.body.director
     const year = req.body.year
-    const gerne = req.body.gerne
+    const genre = req.body.genre
     const rating = req.body.rating
     // console.log("Rating to be inserted : " + req.body.rating);
 
-    db.query('INSERT INTO movie (title, director, year, gerne, rating) VALUES(?,?,?,?,?)',
-        [title, director, year, gerne, rating],
+    db.query('INSERT INTO movie (title, director, year, genre, rating) VALUES(?,?,?,?,?)',
+        [title, director, year, genre, rating],
         (err, result) => {
             if (err) {
                 console.log(err);
