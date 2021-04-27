@@ -10,6 +10,8 @@ function AdminPage() {
     const [year, setYear] = useState(0);
     const [genre, setGenre] = useState("");
     const [rating, setRating] = useState(0);
+    //my commits
+    const [user, setUser] = useState("");
 
     //for search box
     const [name, setName] = useState("");
@@ -95,7 +97,7 @@ function AdminPage() {
                     return (
                         <div key={key} className="movie">
                             <div className="details">Title: {val.Title}</div>
-                            <div className="details"> genre: {val.genre}</div>
+                            <div className="details"> genre: {val.Genre}</div>
                             <div className="details"> Director: {val.Director}</div>
                             <div className="details"> Year: {val.Year}</div>
                             <div className="details"> Rating: {val.Rating}</div>

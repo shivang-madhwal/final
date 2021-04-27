@@ -13,19 +13,20 @@ function Login() {
         Axios.post('http://localhost:3001/login', {
             username: username,
             password: password,
-        }).then(() => {
+        }).then((response) => {
             console.log("User Logged in");
+            console.log(response.data);
         });
     };
 
     return (
-        <div className="user-details">
+        <div className="form-control">
             <label>Username</label>
-            <input type="text" onChange={(event) => {
+            <input className="form-control" type="text" onChange={(event) => {
                 setUsername(event.target.value)
             }}></input>
             <label>Password</label>
-            <input type="text" onChange={(event) => {
+            <input className="form-control" type="password" onChange={(event) => {
                 setPassword(event.target.value)
             }}></input>
             <button className="add-movie btn btn-danger" onClick={login}>Log In</button>

@@ -32,21 +32,21 @@ function SignUp() {
 
 
     return (
-        <div className="user-details">
+        <div className="form-control">
             <label>Name</label>
-            <input type="text" onChange={(event) => {
+            <input className="form-control" type="text" onChange={(event) => {
                 setName(event.target.value)
             }}></input>
             <label>E-mail</label>
-            <input type="text" onChange={(event) => {
+            <input className="form-control" type="text" onChange={(event) => {
                 setEmail(event.target.value)
             }}></input>
             <label>Username</label>
-            <input type="text" onChange={(event) => {
+            <input className="form-control" type="text" onChange={(event) => {
                 setUsername(event.target.value)
             }}></input>
             <label>Password</label>
-            <input type="text" onChange={(event) => {
+            <input className="form-control" type="text" onChange={(event) => {
                 setPassword(event.target.value)
             }}></input>
             <button className="add-movie btn btn-danger" onClick={addUser}>Sign Up</button>
