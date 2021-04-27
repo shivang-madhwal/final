@@ -1,6 +1,8 @@
 import React from "react";
+import { Link as RouterLink, Redirect } from 'react-router-dom';
 import './App.css';
 import Axios from "axios";
+
 import { useState } from 'react';
 
 function Login() {
@@ -29,7 +31,9 @@ function Login() {
             <input className="form-control" type="password" onChange={(event) => {
                 setPassword(event.target.value)
             }}></input>
-            <button className="add-movie btn btn-danger" onClick={login}>Log In</button>
+            <RouterLink to='/adminpage'>
+                <button className="add-movie btn btn-danger" onClick={login}>Log In</button>                
+            </RouterLink>
         </div>
     );
 }

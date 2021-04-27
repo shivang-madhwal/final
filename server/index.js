@@ -21,6 +21,7 @@ app.post('/addmovies', (req, res) => {
     const year = req.body.year
     const genre = req.body.genre
     const rating = req.body.rating
+    const user = req.body.username;
     // console.log("Rating to be inserted : " + req.body.rating);
 
     db.query('INSERT INTO movie (title, director, year, genre, rating) VALUES(?,?,?,?,?)',

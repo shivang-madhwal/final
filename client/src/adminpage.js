@@ -3,6 +3,7 @@ import { Component, useState } from "react";
 import Axios from 'axios';
 import './App.css';
 
+
 function AdminPage() {
 
     const [title, setTitle] = useState("");
@@ -10,8 +11,7 @@ function AdminPage() {
     const [year, setYear] = useState(0);
     const [genre, setGenre] = useState("");
     const [rating, setRating] = useState(0);
-    //my commits
-    const [user, setUser] = useState("");
+   
 
     //for search box
     const [name, setName] = useState("");
@@ -31,6 +31,7 @@ function AdminPage() {
             year: year,
             genre: genre,
             rating: rating,
+            
         }).then(() => {
             console.log("Values inserted successfully");
         });
@@ -75,7 +76,7 @@ function AdminPage() {
                 <input className="form-control" type="text" onChange={(event) => {
                     setDirector(event.target.value);
                 }}></input>
-                <label>genre</label>
+                <label>Genre</label>
                 <input className="form-control" type="text" onChange={(event) => {
                     setGenre(event.target.value);
                 }}></input>
@@ -97,7 +98,7 @@ function AdminPage() {
                     return (
                         <div key={key} className="movie">
                             <div className="details">Title: {val.Title}</div>
-                            <div className="details"> genre: {val.Genre}</div>
+                            <div className="details"> Genre: {val.Genre}</div>
                             <div className="details"> Director: {val.Director}</div>
                             <div className="details"> Year: {val.Year}</div>
                             <div className="details"> Rating: {val.Rating}</div>

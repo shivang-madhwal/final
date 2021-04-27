@@ -2,7 +2,7 @@ import React from "react";
 import './App.css';
 import { useState } from 'react';
 import Axios from 'axios';
-import { useHistory, Redirect } from 'react-router-dom';
+import { useHistory, Link as RouterLink, Redirect } from 'react-router-dom';
 
 
 function SignUp() {
@@ -49,7 +49,9 @@ function SignUp() {
             <input className="form-control" type="text" onChange={(event) => {
                 setPassword(event.target.value)
             }}></input>
-            <button className="add-movie btn btn-danger" onClick={addUser}>Sign Up</button>
+            <RouterLink to='/login'>
+                <button className="add-movie btn btn-danger" onClick={addUser}>Sign Up</button>
+            </RouterLink>
         </div>
     );
 }
