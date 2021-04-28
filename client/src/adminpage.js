@@ -102,6 +102,7 @@ function AdminPage() {
                             <div className="details"> Director: {val.Director}</div>
                             <div className="details"> Year: {val.Year}</div>
                             <div className="details"> Rating: {val.Rating}</div>
+                            
                         </div>);
                 })}
             </div>
